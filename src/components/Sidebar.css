@@ -1,0 +1,48 @@
+.sidebar {
+    width: 13%;
+    min-width: 350px;
+    min-height: 100vh;
+    background-color: var(--sidebar-color);
+    padding: 2rem;
+    color: var(--color-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar h2 {
+    font-size: 3rem;
+    font-family: var(--prmry-font);
+    color: var(--color-text);
+    margin: 3rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar li {
+    margin: 0;
+}
+
+.sidebar a {
+    font-size: var(--Text-font-size);
+    display: block;
+    padding: 0.8rem 3rem;
+    border-radius: 8px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar a:hover {
+    background-color: #ff7b00;
+    color: #ff2a00;
+}

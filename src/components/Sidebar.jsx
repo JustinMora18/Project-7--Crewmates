@@ -8,8 +8,8 @@ export default function Sidebar() {
             <h2>Hero Academy</h2>
             <nav>
                 <Link to="/">🏠 Home</Link>
-                <Link to="/crear">🛠️ Create a Character</Link>
-                <Link to="/galeria">🧑‍🚀 Characters Gallery</Link>
+                <Link to="/createCharacter">🛠️ Create a Character</Link>
+                <Link to="/gallery">🧑‍🚀 Characters Gallery</Link>
             </nav>
         </div>
     );

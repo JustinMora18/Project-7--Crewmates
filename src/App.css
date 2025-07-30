@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Luckiest+Guy&display=swap');
+
+:root{
+        --color-primary: #7432b5;
+        --color-secondary: #530d5d;
+        --color-text: #222222;
+        --sidebar-color: #ffbf00;
+        --color-background: #7958b7;
+        --prmry-font: 'Luckiest Guy', Tahoma, Geneva, Verdana, sans-serif;
+        --scndry-font: 'Comic Neue' , Tahoma, Geneva, Verdana, sans-serif;
+
+        --Text-font-size: 2rem;
+
+        --border-radius: 20px;
+}      
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--scndry-font);
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--color-background, #f0f4f8);
+    overflow-y: auto;
+}
