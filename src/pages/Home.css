@@ -1,0 +1,38 @@
+.home-page {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--font-family-base, 'Segoe UI', sans-serif);
+    color: var(--color-text, #222);
+}
+
+.home-page h1 {
+    font-family: var( --prmry-font);
+    font-size:4rem;
+    margin-bottom: 1rem;
+    color: var(--title-color);
+    font-weight: bolder;
+}
+
+.home-page p {
+    font-size: var(--Text-font-size);
+    color: var(--color-text);
+}
+
+.hero-banner {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

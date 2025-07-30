@@ -3,7 +3,8 @@
 :root{
         --color-primary: #7432b5;
         --color-secondary: #530d5d;
-        --color-text: #222222;
+        --title-color: #3c1d5a;
+        --color-text: #543672;
         --sidebar-color: #ffbf00;
         --color-background: #7958b7;
         --prmry-font: 'Luckiest Guy', Tahoma, Geneva, Verdana, sans-serif;

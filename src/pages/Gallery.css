@@ -1,14 +1,81 @@
 .gallery-page {
     padding: 2rem;
-    font-family: var(--font-family-base, sans-serif);
+    text-align: center;
 }
 
 .gallery-page h2 {
-    font-size: 2rem;
-    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--title-color);
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
-.gallery-page p {
+.hero-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: scale(1.03);
+}
+
+.hero-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 1rem;
+    border: 6px solid #ccc;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    background: #f9f9f9;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.hero-card h3 {
     font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #222;
+}
+
+.hero-card p {
+    font-size: 1rem;
+    margin: 0.3rem 0;
     color: #555;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.hero-actions button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.hero-actions button:hover {
+    background-color: #444;
 }

@@ -10,9 +10,9 @@ export default function CreateHero() {
     const [auraColor, setAuraColor] = useState('#00bfff');
     
     const getImageSrc = () => {
-        if (gender === 'Male') return '/male-hero.png';
-        if (gender === 'Female') return '/female-hero.png';
-        if (gender === 'Creature') return '/creature-hero.png';
+        if (gender === 'Male') return '/images/male-hero.png';
+        if (gender === 'Female') return '/images/female-hero.png';
+        if (gender === 'Creature') return '/images/creature-hero.png';
         return null;
     };
 
@@ -32,20 +32,23 @@ export default function CreateHero() {
         // Supabase conection hereeeee
     };
 
+    const powersList = [
+        "Invisibility",
+        "Teleportation",
+        "Fireball",
+        "Healing",
+        "Super Strength",
+        "Flight",
+        "Telekinesis",
+        "Time Control",
+        "Shape Shifting",
+    ];      
+
     return (
         <div className="create-hero-page">
             <h2>Create Your Hero</h2>
     
             <form onSubmit={handleSubmit} className="hero-form">
-                <label>
-                    Hero Name:
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    />
-                </label>
 
                 <label>
                     Gender:
@@ -57,6 +60,16 @@ export default function CreateHero() {
                     </select>
                 </label>
 
+                <label>
+                    Hero Name:
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                </label>
+                
                 <label>
                     Class / Category:
                     <select value={category} onChange={(e) => setCategory(e.target.value)} required>
@@ -71,10 +84,11 @@ export default function CreateHero() {
                     Special Power:
                     <select value={power} onChange={(e) => setPower(e.target.value)} required>
                         <option value="">-- Select --</option>
-                        <option value="Invisibility">Invisibility</option>
-                        <option value="Teleportation">Teleportation</option>
-                        <option value="Fireball">Fireball</option>
-                        <option value="Healing">Healing</option>
+                        {powersList.map((p) => (
+                            <option key={p} value={p}>
+                                {p}
+                            </option>
+                        ))}
                     </select>
                 </label>
 
@@ -99,10 +113,14 @@ export default function CreateHero() {
                 </label>
 
                 {gender && (
-                    <div className="hero-preview">
-                        <img src={getImageSrc()} alt="Hero Preview" width="180" />
+                    <div
+                        className="hero-preview"
+                        style={{ borderColor: auraColor }}
+                    >
+                        <img src={getImageSrc()} alt="Hero Preview" width="200" />
                     </div>
-                )}
+)}
+
 
                 <button type="submit" className="submit-button">
                     Create Hero

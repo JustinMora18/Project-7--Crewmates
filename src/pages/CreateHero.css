@@ -1,0 +1,83 @@
+.create-hero-page {
+    max-width: 480px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    font-family: var(--font-family-base, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+    color: var(--color-text, #222);
+}
+
+.create-hero-page h2 {
+    font-family: var( --prmry-font);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.hero-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.hero-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text, #222);
+}
+
+.hero-form input[type="text"],
+.hero-form select,
+.hero-form input[type="range"],
+.hero-form input[type="number"] {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.hero-form input[type="text"]:focus,
+.hero-form select:focus,
+.hero-form input[type="range"]:focus,
+.hero-form input[type="number"]:focus {
+    outline: none;
+    border-color: var(--color-primary, #0077cc);
+}
+
+.hero-form button {
+    margin-top: 2rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-primary, #0077cc);
+    color: white;
+    border: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-form button:hover {
+    background-color: var(--color-secondary, #00bfff);
+}
+
+.hero-preview {
+    margin-top: 1rem;
+    border-radius: 12px;
+    display: inline-block;
+    overflow: hidden;
+    box-shadow: 0 0 15px 5px var(--aura-color, #00bfff);
+}
+
+.hero-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

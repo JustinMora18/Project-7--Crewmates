@@ -14,7 +14,7 @@
 .sidebar h2 {
     font-size: 3rem;
     font-family: var(--prmry-font);
-    color: var(--color-text);
+    color: var(--title-color);
     margin: 3rem;
 }
 
