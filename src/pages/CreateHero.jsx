@@ -1,13 +1,27 @@
 import { useState } from 'react';
+import { supabase } from '../supabase/client';
 import './CreateHero.css';
 
-export default function CreateHero() {
+export default function CreateHero({ fetchHeroes }) {
     const [name, setName] = useState('');
     const [gender, setGender] = useState('');
     const [category, setCategory] = useState('');
     const [power, setPower] = useState('');
     const [speed, setSpeed] = useState(50);
     const [auraColor, setAuraColor] = useState('#00bfff');
+    const [message, setMessage] = useState(null);
+
+    const powersList = [
+        'Invisibility',
+        'Teleportation',
+        'Fireball',
+        'Healing',
+        'Super Strength',
+        'Flight',
+        'Telekinesis',
+        'Time Control',
+        'Shape Shifting',
+    ];
     
     const getImageSrc = () => {
         if (gender === 'Male') return '/images/male-hero.png';
@@ -16,39 +30,55 @@ export default function CreateHero() {
         return null;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        const hero = {
-            name,
-            gender,
-            category,
-            power,
-            speed,
-            auraColor,
-        };
-    
-        console.log('New Hero:', hero);
-        // Supabase conection hereeeee
-    };
 
-    const powersList = [
-        "Invisibility",
-        "Teleportation",
-        "Fireball",
-        "Healing",
-        "Super Strength",
-        "Flight",
-        "Telekinesis",
-        "Time Control",
-        "Shape Shifting",
-    ];      
+        const { data, error } = await supabase
+            .from('heroes')
+            .insert([
+            {
+                name,
+                gender,
+                category,
+                power,
+                speed,
+                auraColor,
+                imageSrc: getImageSrc(),
+            },
+        ]);
+
+        console.log('Supabase response:', data, error);
+
+        if (error) {
+            setMessage({ type: 'error', text: 'Error creating hero: ' + error.message });
+        } else {
+            setMessage({ type: 'success', text: 'Hero created successfully!' });
+            fetchHeroes();
+            setName('');
+            setGender('');
+            setCategory('');
+            setPower('');
+            setSpeed(50);
+            setAuraColor('#00bfff');
+        }
+    };
 
     return (
         <div className="create-hero-page">
             <h2>Create Your Hero</h2>
-    
+
+            {message && <div className={`message ${message.type}`}>{message.text}</div>}
+
             <form onSubmit={handleSubmit} className="hero-form">
+                <label>
+                    Hero Name:
+                    <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    />
+                </label>
 
                 <label>
                     Gender:
@@ -60,16 +90,6 @@ export default function CreateHero() {
                     </select>
                 </label>
 
-                <label>
-                    Hero Name:
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    />
-                </label>
-                
                 <label>
                     Class / Category:
                     <select value={category} onChange={(e) => setCategory(e.target.value)} required>
@@ -90,6 +110,7 @@ export default function CreateHero() {
                             </option>
                         ))}
                     </select>
+
                 </label>
 
                 <label>
@@ -113,14 +134,10 @@ export default function CreateHero() {
                 </label>
 
                 {gender && (
-                    <div
-                        className="hero-preview"
-                        style={{ borderColor: auraColor }}
-                    >
+                    <div className="hero-preview" style={{ borderColor: auraColor }}>
                         <img src={getImageSrc()} alt="Hero Preview" width="200" />
                     </div>
-)}
-
+                )}
 
                 <button type="submit" className="submit-button">
                     Create Hero
@@ -128,4 +145,4 @@ export default function CreateHero() {
             </form>
         </div>
     );
-}
+}   

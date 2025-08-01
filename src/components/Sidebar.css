@@ -1,6 +1,6 @@
 .sidebar {
     width: 13%;
-    min-width: 350px;
+    min-width: 405px;
     min-height: 100vh;
     background-color: var(--sidebar-color);
     padding: 2rem;
@@ -36,7 +36,7 @@
     display: block;
     padding: 0.8rem 3rem;
     border-radius: 8px;
-    color: var(--color-text);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.2s ease-in-out;

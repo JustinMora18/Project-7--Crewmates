@@ -1,0 +1,69 @@
+.hero-detail-page {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    color: var( --color-primary);
+}
+
+.hero-detail-page h2{
+    font-family: var(--prmry-font);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.back-button {
+    margin-bottom: 1rem;
+    background: transparent;
+    border: none;
+    color: #555;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.edit-form label,
+.hero-info p {
+    font-size: var(--Text-font-size);
+    margin: 1rem 0;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="color"] {
+    width: 100%;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+}
+
+.edit-form input[type="range"] {
+    width: 100%;
+}
+
+.form-actions,
+.actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+}
+
+button[type="button"],
+.actions button {
+    background-color: #ff5252;
+    color: white;
+}

@@ -3,7 +3,7 @@
     margin: 3rem auto;
     padding: 2rem;
     background-color: #fff;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     font-family: var(--font-family-base, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
     color: var(--color-text, #222);
@@ -28,7 +28,7 @@
     flex-direction: column;
     font-weight: 600;
     font-size: 1rem;
-    color: var(--color-text, #222);
+    color: var(--color-primary);
 }
 
 .hero-form input[type="text"],
@@ -69,12 +69,13 @@
 }
 
 .hero-preview {
-    margin-top: 1rem;
+    border: 5px solid;
     border-radius: 12px;
+    padding: 5px;
     display: inline-block;
-    overflow: hidden;
-    box-shadow: 0 0 15px 5px var(--aura-color, #00bfff);
-}
+    box-shadow: 0 0 15px var(--aura-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}  
 
 .hero-preview img {
     display: block;
